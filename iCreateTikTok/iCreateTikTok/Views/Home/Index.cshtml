@@ -1,0 +1,38 @@
+﻿
+<div class="text-center">
+    <h1 class="display-4">Leads</h1>
+    @if((bool)ViewData["data"] == false)
+    {
+        <p>
+            @ViewBag.msg
+        </p>
+    }
+    else
+    {
+        @foreach (var item in ViewData["data"] as IEnumerable<iCreateTikTok.Models.LeadItem>)
+        {
+            <p>
+                Code: @item.Code
+            </p>
+            <p>
+                Message: @item.Message
+            </p>
+            <p>
+                Data Status: @item.Data.Status
+            </p>
+            <p>
+                Data Task Id: @item.Data.Task_id
+            </p>
+            <p>
+                Data File Name: @item.Data.File_name
+            </p>
+            <p>
+                Data File Type: @item.Data.File_type
+            </p>
+            <p>
+                Request: @item.Request_id
+            </p>
+        }
+    }
+   
+</div>
